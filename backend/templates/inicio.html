@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+
+</head>
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="col-md-2">
+        <div class="hidden-xs hidden-sm">
+            <h4 class="titulomenu">Consultorio</h4>
+            <img src="{% static 'img/maleta.png' %}" alt="">
+        </div>
+        <h4 class="titulomenu">Menu</h4>
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="col-md-10">
+
+        <ol class="breadcrumb" style="margin-top:15px;">
+            <li><a href="/">Home</a></li>
+            <li>Backend</li>
+
+
+        </ol>
+        <form action="" class="form-inline" method="post">
+            </fieldset>
+            <fieldset class="fieldset">
+                <legend>Datos</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario:</label>
+                        <input type="text" class="form-control" placeholder="Eje:admin"
+                               title="Por Favor Ingrese su Usuario" required name="nombre"/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario:</label>
+                        <input type="text" class="form-control" placeholder="Eje:admin"
+                               title="Por Favor Ingrese su Usuario" required name="nombre"/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario:</label>
+                        <input type="text" class="form-control" placeholder="Eje:admin"
+                               title="Por Favor Ingrese su Usuario" required name="nombre"/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario:</label>
+                        <input type="text" class="form-control" placeholder="Eje:admin"
+                               title="Por Favor Ingrese su Usuario" required name="nombre"/>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario:</label>
+                        <textarea name="" id="" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 combos">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Sexo">Sexo:</label>
+                            <select name="sexo" class="form-control">
+                                <option value="H">Hombre</option>
+                                <option value="M">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Sexo">Sexo:</label>
+                            <select name="sexo" class="form-control">
+                                <option value="H">Hombre</option>
+                                <option value="M">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Sexo">Sexo:</label>
+                            <select name="sexo" class="form-control">
+                                <option value="H">Hombre</option>
+                                <option value="M">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="row">
+
+                    <div class="col-md-8 botones">
+                        <button class="btn btn-primary pull-right" type="submit"><span
+                                class="glyphicon glyphicon-ok"></span> Guardar
+                        </button>
+                        <button class="btn btn-primary pull-right" type="submit"><span
+                                class="glyphicon glyphicon-search"></span> Buscar
+                        </button>
+                        <button class="btn btn-danger pull-right" type="submit"><span
+                                class="glyphicon glyphicon-remove"></span> Borrar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

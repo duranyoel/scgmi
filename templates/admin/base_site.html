@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+{% block title %}{{ title }} | SMI {% endblock %}
+
+
+{% block branding %}
+<h1 id="site-name"class="logo"><a href="/"><img src="{% static 'img/logo.png' %}" style="
+width:100%;" /></a></h1>
+{% endblock %}
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+<head>
+    <meta charset="utf-8">
+
+</head>
+{% load staticfiles %}
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="col-md-12 carousel-back">
+            <div class="carousel slide" id="carousel-1" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                    <li data-target="#carousel-1" data-slide-to="3"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="col-md-6 imgslider">
+                            <img src="{% static 'img/slide1.jpg' %}" class="img-responsive">
+                        </div>
+                        <div class="container hidden-xs hidden-sm">
+                            <div class="col-md-6">
+                                <h3>Creado para la gesti&oacute;n y control de consultorios</h3>
+
+                                <p>Este sistema esta creado y pensado para llevar el control de
+                                    los consultorios medicos ya sean privados o publicos y poder ayudar
+                                    a los profesionales de la medicina llevar el control de sus pacientes.</p>
+
+                                <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Leer
+                                    Mas &raquo;</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="col-md-6 imgslider">
+                            <img src="{% static 'img/slide3.jpg' %}" class="img-responsive">
+                        </div>
+                        <div class="container hidden-xs hidden-sm">
+                            <div class="col-md-6">
+                                <h3>Cerca de Ti</h3>
+
+                                <p>Accede a nuestro sistema desde cualquier parte del mundo y
+                                    desde cualquier dispositivo, adaptable a cualquier pantalla, facil de usar.
+                                    todos los datos son estrictamente confidenciales, dejanos ser tu aliado
+                                    en tu labor.</p>
+
+                                <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Leer
+                                    Mas &raquo;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-6 imgslider">
+                            <img src="{% static 'img/slide4.jpg' %}" class="img-responsive">
+                        </div>
+                        <div class="container hidden-xs hidden-sm">
+                            <div class="col-md-6">
+                                <h3>Olvidate del papeleo innecesario</h3>
+
+                                <p>Olvidate de tener que tener que sacar copias a las historias medicas de los
+                                    pacientes y tener que andar con ellas para arriba y para abajo.Ya no mas maletas
+                                    o carpetas molestas,desde aqui podras acceder a las historias medicas de tus
+                                    pacientes y poder compartir esa informaci&oacute;n con otros colegas.</p>
+
+                                <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Learn
+                                    more &raquo;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-1" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Bienvenido Visitantes</h2>
+
+            <p>Bienvenid@ visitante a nuestra p&aacute;gina a continuaci&oacute;n te invito a leer
+                un poco nuestra reseña, donde podras tener un poco de detalles sobre la aplicaci&oacute;n</p>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+
+</head>
+{% load staticfiles %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="col-md-6">
+                <div class="row" style="margin-top:15px;">
+
+                    {% if formulario.errors %}
+                    <div class="alert alert-warning">
+                        <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                        Por Favor Corrija estos errores
+
+                    </div>
+                    {% endif %}
+                </div>
+
+                <h3 class="titulo">Registrate</h3>
+
+                <form action="" class="" method="post">
+                    {% csrf_token %}
+                    <fieldset class="fieldset">
+                        <div class="form-group bg-info">
+                            <a href="ingresar.html">Ya tengo una cuenta</a>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="Nombre">Nombre:<em>(*)</em>
+
+                                <div class="error">{{ formulario.nombre.errors }}</div>
+                            </label>
+                            {{formulario.nombre}}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Apellido">Apellido:<em>(*)</em><div class="error">{{ formulario.apellido.errors }}</div></label>
+                            {{formulario.apellido}}
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email:<em>(*)</em><div class="error">{{ formulario.email.errors }}</div></label>
+                            {{formulario.email}}
+                        </div>
+                        <div class="form-group">
+                            <label for="Usuario">Usuario:<em>(*)</em><div class="error">{{ formulario.usuario.errors }}</div></label>
+                            {{formulario.usuario}}
+                        </div>
+                        <div class="form-group">
+                            <label for="Contraseña">Contrase&ntilde;a:<em>(*)</em><div class="error">{{ formulario.password.errors }}</div></label>
+                            {{formulario.password}}
+                        </div>
+                        <div class="form-group">
+                            <label for="Contraseña">Repetir Contrase&ntilde;a:<em>(*)</em><div class="error">{{ formulario.reppassword.errors }}</div></label>
+                            {{formulario.reppassword}}
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+
+                                <input type="checkbox" name="terminos">Estoy de Acuerdo con los Terminos
+                            </label>
+                        </div>
+
+
+                        <input type="submit" class="btn btn-primary btn-lg pull-right" name="boton" value="Registrarse">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-6 text-center hidden-xs hidden-sm">
+                <img src="{% static 'img/slide1.jpg' %}" width="450px" style="margin-top:30px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
