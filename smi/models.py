@@ -10,6 +10,7 @@ class Estado(models.Model):
     nombre = models.CharField(max_length=150)
     codigo = models.CharField(max_length=50)
     descripcion = models.TextField(blank=True)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -18,6 +19,7 @@ class Estado(models.Model):
 class Municipio(models.Model):
     estado = models.ForeignKey(Estado)
     nombre = models.CharField(max_length=150)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -26,6 +28,7 @@ class Municipio(models.Model):
 class Parroquia(models.Model):
     municipio =  models.ForeignKey(Municipio)
     nombre = models.CharField(max_length=150)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -34,6 +37,7 @@ class Parroquia(models.Model):
 class Especialidade(models.Model):
     codigo = models.CharField(max_length=30)
     nombre = models.CharField(max_length=100)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -77,7 +81,7 @@ class Persona(models.Model):
     numero_hcm = models.CharField(max_length=50,verbose_name='Numero HCM',blank=True)
     nombre_hcm = models.CharField(max_length=150,verbose_name='Nombre HCM',blank=True)
     imagen = ImageWithThumbsField(upload_to='photos', sizes=((125,125),(200,200)),verbose_name='Imágen',blank=True)
-
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombres
@@ -86,6 +90,7 @@ class Persona(models.Model):
 class Medico(models.Model):
     persona = models.ForeignKey(Persona)
     certificado = models.CharField(max_length=100)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.certificado
@@ -104,6 +109,7 @@ class Ambulatorio(models.Model):
     telefono = models.CharField(max_length=150, blank=True)
     email = models.EmailField(max_length=150, blank=True)
     tipo = models.CharField(max_length=100,choices=TIPO_OPCION)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -112,6 +118,7 @@ class Ambulatorio(models.Model):
 class Almacene(models.Model):
     ambulatorio = models.ForeignKey(Ambulatorio)
     nombre  = models.CharField(max_length=150)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -120,6 +127,7 @@ class Almacene(models.Model):
 class Clase(models.Model):
     referencia = models.CharField(max_length=30)
     nombre = models.CharField(max_length=100)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -130,6 +138,7 @@ class Categoria(models.Model):
     referencia = models.CharField(max_length=50)
     nombre = models.CharField(max_length=150)
     descripcion = models.TextField()
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.nombre
@@ -139,6 +148,8 @@ class Patologia(models.Model):
     descripcion = models.TextField(verbose_name='Descripcion')
     sintomas = models.TextField()
     tratamiento = models.TextField()
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.nombre
 
@@ -149,6 +160,8 @@ class Medicina(models.Model):
     descripcion = models.TextField(verbose_name='Descripción',blank=True)
     presentacion = models.CharField(max_length=100)
     imagen = ImageWithThumbsField(upload_to='photos', sizes=((125,125),(200,200)),verbose_name='Imágen')
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.referencia
 
@@ -157,6 +170,8 @@ class Inventario(models.Model):
     almacen= models.ForeignKey(Almacene)
     cantidad = models.IntegerField()
     fecha_vencimiento= models.DateField()
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
        return self.medicina
 
@@ -172,6 +187,7 @@ class Consulta(models.Model):
     medicinas = models.ManyToManyField(Medicina)
     tratamiento = models.TextField()
     observaciones = models.TextField()
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.persona
@@ -186,6 +202,7 @@ class Enfermero(models.Model):
     persona= models.ForeignKey(Persona)
     turno = models.CharField(choices=TURNO_OPCION,max_length=100)
     ambulatorio = models.ManyToManyField(Ambulatorio)
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.persona
@@ -198,7 +215,7 @@ class Cita(models.Model):
     motivo = models.CharField(max_length=150)
     fecha = models.DateField()
     hora = models.TimeField()
-
+    fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
         return self.persona
@@ -214,6 +231,8 @@ class Perfile(models.Model):
     edad = models.IntegerField()
     sexo = models.CharField(max_length=50, choices=SEXO_OPTIONS)
     imagen = ImageWithThumbsField(upload_to='photos', sizes=((125,125),(200,200)),verbose_name='Imágen')
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self): # __unicode__ en Python 2
         return self.cedula
 
@@ -235,6 +254,8 @@ class Historia(models.Model):
     alergias= models.TextField(blank=True)
     hipertenso=models.BooleanField(blank=True)
     discapacidades=models.TextField(blank=True)
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self): # __unicode__ en Python 2
         return self.codigo
 
@@ -250,6 +271,8 @@ class Embarazo(models.Model):
     observaciones=models.TextField()
     motivo_perdida=models.CharField(max_length=150)
     tipo_parto =models.CharField(max_length=100,choices=OPTIONS)
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.paciente
 
@@ -264,6 +287,8 @@ class  Fractura(models.Model):
     tratamiento = models.TextField(blank=True)
     fecha = models.DateField()
     dias_reposo= models.IntegerField(blank=True)
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.historia
 
@@ -278,5 +303,7 @@ class Operacione(models.Model):
     tratamiento = models.TextField(blank=True)
     fecha = models.DateField()
     dias_reposo= models.IntegerField(blank=True)
+    fecha_registro = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.historia

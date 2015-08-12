@@ -27,7 +27,7 @@ SECRET_KEY = 'mcyep$@zg)zrp3_nw16f8(ij397+w&-9o4-vll3yg9$mt2wk5n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 ADMINS = ('Yoel Duran', 'sistemasweb866@gmail.com')
 EMAIL_HOST = 'smtp.gmail.com'
@@ -119,4 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), '/static/',)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), '/static/')

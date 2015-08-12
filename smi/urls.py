@@ -1,12 +1,12 @@
 #encoding:utf-8_
 from django.conf.urls import  url
-from smi.views import index_view,registro_view,ingresar_view,logout,registrarse,gracias_view
+from smi.views import index_view,ingresar_view,logout,registrarse,gracias_view
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', index_view),
-    url(r'^registro', registro_view),
+
     url(r'^login', ingresar_view),
     url(r'^logout', logout),
     url(r'^registrarse', registrarse),

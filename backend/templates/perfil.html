@@ -8,25 +8,7 @@
 {% block content %}
 <div class="container">
 
-    <div class="col-md-2">
-        <div class="hidden-xs hidden-sm">
-            <h4 class="titulomenu">Consultorio</h4>
-            <img src="{% static 'img/maleta.png' %}" alt="">
-        </div>
-        <h4 class="titulomenu">Menu</h4>
-
-        <div class="menu">
-
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-            </ul>
-        </div>
-
-
-    </div>
+    {% include 'menu.html' %}
     <div class="col-md-10">
         {% if formulario.errors %}
             <div class="alert alert-warning">
@@ -45,6 +27,24 @@
 
             <fieldset class="fieldset">
                 <legend>Datos</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Estado">Estado:</label>
+                        {{formulario.estado}}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Municipio">Municipio:</label>
+                        {{formulario.municipio}}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Parroquia">Parroquia:</label>
+                        {{formulario.parroquia}}
+                    </div>
+                </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Usuario">Cedula:</label>
@@ -76,7 +76,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-10 botones">
+                    <div class="col-md-12 botones">
                         <button class="btn btn-primary pull-right" type="submit"><span
                                 class="glyphicon glyphicon-ok"></span> Guardar
                         </button>

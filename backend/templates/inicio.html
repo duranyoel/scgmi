@@ -7,25 +7,7 @@
 {% load staticfiles %}
 {% block content %}
 <div class="container">
-    <div class="col-md-2">
-        <div class="hidden-xs hidden-sm">
-            <h4 class="titulomenu">Consultorio</h4>
-            <img src="{% static 'img/maleta.png' %}" alt="">
-        </div>
-        <h4 class="titulomenu">Menu</h4>
-
-        <div class="menu">
-
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-            </ul>
-        </div>
-
-
-    </div>
+   {% include 'menu.html' %}
     <div class="col-md-10">
 
         <ol class="breadcrumb" style="margin-top:15px;">
