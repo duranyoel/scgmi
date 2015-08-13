@@ -13,7 +13,7 @@ class Estado(models.Model):
     fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
-        return self.nombre
+         return '{0}'.format(self.nombre)
 
 #Municipios
 class Municipio(models.Model):
@@ -22,7 +22,7 @@ class Municipio(models.Model):
     fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
-        return self.nombre
+        return '{0}'.format(self.nombre)
 
 #Parroquias
 class Parroquia(models.Model):
@@ -31,7 +31,7 @@ class Parroquia(models.Model):
     fecha_registro = models.DateTimeField(auto_now=True)
 
     def __str__(self): # __unicode__ en Python 2
-        return self.nombre
+        return '{0}'.format(self.nombre)
 
 #Especialidades
 class Especialidade(models.Model):

@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'smi',
     'backend',
+    'dajaxice',
+    'dajax',
 )
 
 MIDDLEWARE_CLASSES = (

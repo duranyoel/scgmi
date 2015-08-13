@@ -11,11 +11,11 @@
     {% include 'menu.html' %}
     <div class="col-md-10">
         {% if formulario.errors %}
-            <div class="alert alert-warning">
-                <button class="close" data-dismiss="alert"><span>&times;</span></button>
-                Por Favor Corrija estos errores
+        <div class="alert alert-warning">
+            <button class="close" data-dismiss="alert"><span>&times;</span></button>
+            Por Favor Corrija estos errores
 
-            </div>
+        </div>
         {% endif %}
         <ol class="breadcrumb" style="margin-top:15px;">
             <li><a href="/">Home</a></li>
@@ -27,22 +27,25 @@
 
             <fieldset class="fieldset">
                 <legend>Datos</legend>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="Estado">Estado:</label>
-                        {{formulario.estado}}
+
+                <div class="multiselect">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Estado">Estado:</label>
+                            {{formulario.estado}}
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="Municipio">Municipio:</label>
-                        {{formulario.municipio}}
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Municipio">Municipio:</label>
+                            {{formulario.municipio}}
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="Parroquia">Parroquia:</label>
-                        {{formulario.parroquia}}
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Parroquia">Parroquia:</label>
+                            {{formulario.parroquia}}
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -54,13 +57,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Usuario">Edad:</label>
-                       {{formulario.edad}}
+                        {{formulario.edad}}
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Usuario">Sexo:</label>
-                       {{formulario.sexo}}
+                        {{formulario.sexo}}
                     </div>
                 </div>
 
